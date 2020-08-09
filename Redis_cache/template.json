@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Redis_se010redis_name": {
+            "defaultValue": "se010redis",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Cache/Redis",
+            "apiVersion": "2019-07-01",
+            "name": "[parameters('Redis_se010redis_name')]",
+            "location": "Southeast Asia",
+            "properties": {
+                "sku": {
+                    "name": "Basic",
+                    "family": "C",
+                    "capacity": 0
+                },
+                "enableNonSslPort": false,
+                "redisConfiguration": {
+                    "maxclients": "256",
+                    "maxmemory-reserved": "2",
+                    "maxfragmentationmemory-reserved": "12",
+                    "maxmemory-delta": "2"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Cache/Redis/firewallRules",
+            "apiVersion": "2019-07-01",
+            "name": "[concat(parameters('Redis_se010redis_name'), '/ClientIPAddress202084')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Cache/Redis', parameters('Redis_se010redis_name'))]"
+            ],
+            "properties": {
+                "startIP": "112.134.34.57",
+                "endIP": "112.134.34.57"
+            }
+        }
+    ]
+}

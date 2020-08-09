@@ -1,0 +1,60 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "Redis_se010redis_name": {
+            "value": null
+        },
+        "servers_se010server_name": {
+            "value": null
+        },
+        "sites_se010function_name": {
+            "value": null
+        },
+        "sites_se010_webApp01_name": {
+            "value": null
+        },
+        "sites_se010_webApp02_name": {
+            "value": null
+        },
+        "vaults_se010keyVault_name": {
+            "value": null
+        },
+        "frontdoors_se010frontdoor_name": {
+            "value": null
+        },
+        "serverfarms_se010AppServicePlan_name": {
+            "value": null
+        },
+        "storageAccounts_se010storage_name": {
+            "value": null
+        },
+        "components_function_insights_name": {
+            "value": null
+        },
+        "components_webapp01_insights_name": {
+            "value": null
+        },
+        "components_webApp02_insights_name": {
+            "value": null
+        },
+        "actionGroups_Application_Insights_Smart_Detection_name": {
+            "value": null
+        },
+        "frontdoorwebapplicationfirewallpolicies_fireWallPolicy_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___function_insights_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___webapp01_insights_name": {
+            "value": null
+        },
+        "smartdetectoralertrules_failure_anomalies___webapp02_insights_name": {
+            "value": null
+        }
+    }
+}
